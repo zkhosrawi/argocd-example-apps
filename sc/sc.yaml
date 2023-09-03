@@ -3,7 +3,7 @@ kind: StorageClass
 metadata:
   annotations:
     storageclass.kubernetes.io/is-default-class: "true"
-    argocd.argoproj.io/sync-options: Validate=false
+    argocd.argoproj.io/sync-options: Replace=true
   name: local-path
 provisioner: rancher.io/local-path
 reclaimPolicy: Delete
