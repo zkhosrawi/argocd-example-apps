@@ -9,3 +9,4 @@ reclaimPolicy: Delete
 volumeBindingMode: WaitForFirstConsumer
 parameters:
   nodePath: /data/ssd
+  test: teast
