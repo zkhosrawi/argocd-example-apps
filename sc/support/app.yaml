@@ -15,3 +15,8 @@ spec:
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
+operation:
+  sync: 
+    syncStrategy: 
+      apply: 
+        force: true
