@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: storage-app
+  namespace: argocd
+spec:
+  source:
+    path: 'sc'
+    repoURL: 'https://github.com/mabusaa/argocd-example-apps.git'
+    targetRevision: application-fileparams
+  destination:
+    namespace: 'default'
+    server: 'https://kubernetes.default.svc'
+  project: default
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
