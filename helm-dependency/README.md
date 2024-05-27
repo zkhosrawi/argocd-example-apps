@@ -28,7 +28,7 @@ wordpress:
 ### Subchart Note
 
 The wordpress chart referenced in this example contains a subchart for mariadb as specified in the requirements.yaml file of the wordpress chart:
-```yaml
+```yaml TEST
 - name: mariadb
   version: 5.x.x
   repository: https://charts.helm.sh/stable
