@@ -38,7 +38,7 @@ The wordpress chart referenced in this example contains a subchart for mariadb a
 ```
 
 In order to disable this chart, you must set the value to false for both `mariadb.enabled` and `wordpress.mariadb.enabled`. The first is used by the mariadb subchart condition field, the second is used by the wordpress chart deployment template. An example demonstration is available in the values-nomaria.yaml file:
-```yaml test
+```yaml
 mariadb:
   enabled: false
 
