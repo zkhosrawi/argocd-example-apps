@@ -2,7 +2,8 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  generateName: upgrade-sql-schema-1
+  #generateName: upgrade-sql-schema-1
+  name: upgrade-sql-schema-1
 spec:
   template:
     spec:
@@ -15,7 +16,10 @@ spec:
 apiVersion: batch/v1
 kind: Job
 metadata:
-  generateName: upgrade-sql-schema-2
+  #generateName: upgrade-sql-schema-2
+  name: upgrade-sql-schema-2
+  annotations:
+    argocd-argoproj.io/sync-wave: "1"
 spec:
   template:
     spec:
@@ -59,6 +63,8 @@ apiVersion: batch/v1
 kind: Job
 metadata:
   name: maint-page-up
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"
 spec:
   template:
     spec:
@@ -73,6 +79,8 @@ apiVersion: apps/v1
 kind: ReplicaSet
 metadata:
   name: frontend
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"
 spec:
   replicas: 1
   selector:
@@ -103,6 +111,8 @@ apiVersion: batch/v1
 kind: Job
 metadata:
   name: maint-page-down
+  annotations:
+    argocd.argoproj.io/sync-wave: "3"
 spec:
   template:
     spec:
