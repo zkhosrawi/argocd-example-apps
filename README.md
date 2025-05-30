@@ -1,3 +1,5 @@
+argo-example
+
 # ArgoCD Example Apps
 
 This repository contains example applications for demoing ArgoCD functionality. Feel free
